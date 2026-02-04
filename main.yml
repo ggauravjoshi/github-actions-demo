@@ -1,0 +1,20 @@
+name: GitHub Actions Practical
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  demo-job:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Give execute permission
+        run: chmod +x test.sh
+
+      - name: Run shell script
+        run: ./test.sh
